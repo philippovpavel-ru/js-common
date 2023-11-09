@@ -9,10 +9,10 @@ function getVowels(string) {
 	];
 
 	for (let i = 0; i < string.length; i++) {
-		const currentLetter = string[i].toLowerCase();
+		const lowerCaseLetter = string[i].toLowerCase();
 
-		if (letters.includes(currentLetter)) {
-			vowels = vowels + currentLetter;
+		if ( letters.includes(lowerCaseLetter) ) {
+			vowels += lowerCaseLetter;
 		}
 	}
 

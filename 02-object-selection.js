@@ -13,10 +13,11 @@ const workers = [
 	}
 ];
 
-console.log('Достойные сотрудники: ' + getWorthyWorkers(workers));
+console.log('Достойные сотрудники: ' + "\n" + getWorthyWorkers(workers));
+console.log('Достойные сотрудники через filter: ' + "\n" + getWorthyWorkersFilter(workers));
 
 function getWorthyWorkers(workers, neededSalary = 1000) {
-	let worthyWorkers = [];
+	const worthyWorkers = [];
 
 	workers.forEach(worker => {
 		if (worker.salary > neededSalary) {
@@ -25,4 +26,10 @@ function getWorthyWorkers(workers, neededSalary = 1000) {
 	});
 
 	return worthyWorkers;
+}
+
+function getWorthyWorkersFilter(workers, neededSalary = 1000) {
+	return workers
+		.filter(worker => worker.salary > neededSalary)
+		.map(worker => worker.name);
 }

@@ -1,13 +1,9 @@
 const path = "/users/download/index.html";
 
-console.log( 'Имеется ли в конце расширение .html в пути: "' + path + '"? ' + isHtml(path) );
+console.log( 'Имеется ли в конце расширение .html в пути: "' + path + '"? ' + "\n" + isHtml(path) );
 
 function isHtml(path, reqExt = '.html') {
-	let pathExt = path.slice(-5);
+	let pathExt = path.slice('-' + reqExt.length );
 
-	if ( pathExt == reqExt ) {
-		return true;
-	}
-
-	return false;
+	return pathExt === reqExt;
 }
